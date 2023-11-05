@@ -1,0 +1,32 @@
+name: FitLifeHub
+repository: https://github.com/Luis270100/FitLifeHub
+
+packages:
+  - .
+  - modules/*
+
+command:
+  version:
+    workspaceChangelog: true
+    updateGitTagRefs: true
+    linkToCommits: true
+  bootstrap:
+    # It seems so that running "pub get" in parallel has some issues (like
+    # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
+    # makes the CI much more stable, though definitely slower.
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: melos exec -- "flutter analyze"
+    description: Run `flutter analyze` in all packages
+
+  format:
+    run: melos exec -- "flutter format . --set-exit-if-changed"
+    description: Run `flutter format .` in all packages
+
+  test:
+    # Only run the test command when the package has a test directory
+    run: melos exec --dir-exists=test -- "flutter test"
+    description: Run `flutter test` in all packages

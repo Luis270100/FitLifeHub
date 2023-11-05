@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
   #Modules
   common:
     path: modules/common
@@ -26,6 +27,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  melos: ^3.2.0
+  very_good_analysis: ^5.1.0
 
 flutter:
 
