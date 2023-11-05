@@ -19,11 +19,11 @@ command:
 
 scripts:
   analyze:
-    run: melos exec -- "flutter analyze"
+    run: cd $MELOS_ROOT_PATH && melos exec -c 1 -- dart analyze . --fatal-infos
     description: Run `flutter analyze` in all packages
 
   format:
-    run: melos exec -- "flutter format . --set-exit-if-changed"
+    run: cd $MELOS_ROOT_PATH && melos exec -- "dart format --line-length 80 . --set-exit-if-changed"
     description: Run `flutter format .` in all packages
 
   test:
