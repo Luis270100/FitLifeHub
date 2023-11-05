@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe/domain/entities/recipe.dart';
 
 void main() {
   runApp(const MyApp());

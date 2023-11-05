@@ -27,6 +27,15 @@ scripts:
     description: Run `flutter format .` in all packages
 
   test:
-    # Only run the test command when the package has a test directory
-    run: melos exec --dir-exists=test -- "flutter test"
-    description: Run `flutter test` in all packages
+    run: melos exec --dir-exists="test" --fail-fast -- flutter test --no-pub --coverage
+    description: Run all Flutter tests in this project.
+
+  test_coverage:
+    description: Merge all packages coverage tracefiles ignoring data related to generated files.
+    run: |
+      melos exec rm -rf coverage
+      melos run test
+      melos exec -c 1 --file-exists=coverage/lcov.info -- coverde filter --input ./coverage/lcov.info --output MELOS_ROOT_PATH/coverage/filtered.lcov.info --filters \.g\.dart
+      coverde value -i coverage/filtered.lcov.info > MELOS_ROOT_PATH/coverage/result.txt
+      genhtml coverage/lcov.info -o coverage/html
+      open coverage/html/index.html
