@@ -57,13 +57,11 @@ android {
         Development {
             dimension "app"
             applicationId "com.luisart.fit_life_hub.dev"
-//            resValue "string", "app_name", "FitLifeHub Dev"
             applicationIdSuffix ".dev"
         }
         Production {
             dimension "app"
             applicationId "com.luisart.fit_life_hub.prod"
-//            resValue "string", "app_name", "FitLifeHub"
         }
     }
 
