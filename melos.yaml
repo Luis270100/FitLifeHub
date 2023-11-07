@@ -5,6 +5,10 @@ packages:
   - .
   - modules/*
 
+ide:
+  intellij:
+    enabled: false
+
 command:
   version:
     workspaceChangelog: true

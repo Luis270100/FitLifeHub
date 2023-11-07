@@ -14,9 +14,13 @@ migrate_working_dir/
 env/.env.dev
 env/.env.prod
 
+# Melos config: https://melos.invertase.dev/~melos-latest/getting-started
+pubspec_overrides.yaml
+
 # Ignore test-related files
 /coverage.data
 /coverage/
+lcov.info
 
 # IntelliJ related
 *.iml
