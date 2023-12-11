@@ -8,7 +8,7 @@ final getIt = GetIt.instance;
 
 Future<void> initDi() async {
   await commonDi(getIt);
-  await exerciseDi(getIt);
+  await ExerciseDi.init(getIt);
   await profileDi(getIt);
   await recipeDi(getIt);
 }
