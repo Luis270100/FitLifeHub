@@ -12,11 +12,5 @@ class ExercisesViewCubit extends Cubit<ExercisesViewState> {
 
   final ExerciseRepository _exerciseRepository;
 
-  Future<void> load() async {
-    final response = await _exerciseRepository.loadByCategory(
-      category: 'chest',
-    );
-
-    print(response);
-  }
+  Future<void> load() async {}
 }
