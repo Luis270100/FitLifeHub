@@ -30,7 +30,7 @@ void main() {
   const data = [
     {
       'name': 'Rower',
-      'type': 'cardio',
+      'type': 'strongman',
       'muscle': 'middle_back',
       'equipment': 'machine',
       'difficulty': 'intermediate',
@@ -39,9 +39,9 @@ void main() {
     {
       'name': 'Elliptical trainer',
       'type': 'cardio',
-      'muscle': 'quadriceps',
+      'muscle': 'traps',
       'equipment': 'machine',
-      'difficulty': 'intermediate',
+      'difficulty': 'expert',
       'instructions': 'To begin, seat yourself on the rower.',
     },
   ];
@@ -49,6 +49,7 @@ void main() {
   const exercises = [
     Exercise(
       name: 'Rower',
+      type: ExerciseType.strongman,
       muscle: Muscle.middleBack,
       equipment: 'machine',
       difficulty: Difficulty.intermediate,
@@ -56,9 +57,9 @@ void main() {
     ),
     Exercise(
       name: 'Elliptical trainer',
-      muscle: Muscle.quadriceps,
+      muscle: Muscle.traps,
       equipment: 'machine',
-      difficulty: Difficulty.intermediate,
+      difficulty: Difficulty.expert,
       instructions: 'To begin, seat yourself on the rower.',
     ),
   ];
