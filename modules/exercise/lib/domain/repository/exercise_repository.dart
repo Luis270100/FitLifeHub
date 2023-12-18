@@ -1,4 +1,6 @@
+import 'package:exercise/domain/entities/difficulty.dart';
 import 'package:exercise/domain/entities/exercise.dart';
+import 'package:exercise/domain/entities/exercise_type.dart';
 
 abstract class ExerciseRepository {
   Future<List<Exercise>> loadByCategory({
@@ -6,7 +8,7 @@ abstract class ExerciseRepository {
   });
 
   Future<List<Exercise>> loadByType({
-    required String type,
+    required ExerciseType type,
   });
 
   Future<List<Exercise>> loadByName({
@@ -14,6 +16,6 @@ abstract class ExerciseRepository {
   });
 
   Future<List<Exercise>> loadByDifficulty({
-    required String difficulty,
+    required Difficulty difficulty,
   });
 }
