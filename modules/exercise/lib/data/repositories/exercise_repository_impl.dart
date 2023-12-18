@@ -3,6 +3,9 @@ import 'package:exercise/domain/entities/difficulty.dart';
 import 'package:exercise/domain/entities/exercise.dart';
 import 'package:exercise/domain/entities/exercise_type.dart';
 import 'package:exercise/domain/repository/exercise_repository.dart';
+import 'package:exercise/utils/extensions/difficulty_extension.dart';
+import 'package:exercise/utils/extensions/exercise_type_extension.dart';
+import 'package:exercise/utils/extensions/muscle_extension.dart';
 
 class ExerciseRepositoryImpl implements ExerciseRepository {
   const ExerciseRepositoryImpl(
@@ -77,10 +80,10 @@ class ExerciseRepositoryImpl implements ExerciseRepository {
 
   Exercise _toDomain(Map<String, dynamic> json) => Exercise(
         name: json['name'] as String? ?? '',
-        type: json['type'] as String? ?? '',
-        muscle: json['muscle'] as String? ?? '',
+        type: (json['type'] as String? ?? '').setExerciseType(),
+        muscle: (json['muscle'] as String? ?? '').setMuscle(),
         equipment: json['equipment'] as String? ?? '',
-        difficulty: json['difficulty'] as String? ?? '',
+        difficulty: (json['difficulty'] as String? ?? '').setDifficulty(),
         instructions: json['instructions'] as String? ?? '',
       );
 }

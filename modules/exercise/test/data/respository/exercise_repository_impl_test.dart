@@ -21,10 +21,7 @@ void main() {
   const exercises = [
     Exercise(
       name: 'name',
-      type: 'type',
-      muscle: 'muscle',
       equipment: 'equipment',
-      difficulty: 'difficulty',
       instructions: 'description',
     ),
   ];
