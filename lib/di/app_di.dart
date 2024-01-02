@@ -10,5 +10,5 @@ Future<void> initDi() async {
   await commonDi(getIt);
   await ExerciseDi.init(getIt);
   await profileDi(getIt);
-  await recipeDi(getIt);
+  await RecipeDi.init(getIt);
 }
