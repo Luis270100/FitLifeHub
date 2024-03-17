@@ -15,29 +15,34 @@ class ExerciseRepositoryImpl implements ExerciseRepository {
   final Dio dio;
 
   @override
-  Future<List<Exercise>> loadByCategory({required String category}) async {
-    try {
-      final response = await dio.get<List<dynamic>>(
-        '?muscle=$category',
-      );
-
-      return _manageResponse(response);
-    } on Exception catch (e) {
-      throw Exception(e.toString());
-    }
-  }
-
-  @override
-  Future<List<Exercise>> loadByDifficulty({
-    required Difficulty difficulty,
+  Future<List<Exercise>> loadExercisesByFilters({
+    String muscle = '',
+    Difficulty difficulty = Difficulty.none,
+    ExerciseType type = ExerciseType.none,
   }) async {
     try {
+      var url = '';
+
+      if (muscle.isNotEmpty) {
+        url += '?muscle=$muscle';
+      }
+
+      if (difficulty != Difficulty.none) {
+        url += url.isEmpty
+            ? '?difficulty=${difficulty.value}'
+            : '&?difficulty=${difficulty.value}';
+      }
+
+      if (type != ExerciseType.none) {
+        url += url.isEmpty ? '?type=${type.value}' : '&?type=${type.value}';
+      }
+
       final response = await dio.get<List<dynamic>>(
-        '?difficulty=${difficulty.value}',
+        url,
       );
 
       return _manageResponse(response);
-    } on Exception catch (e) {
+    } catch (e) {
       throw Exception(e.toString());
     }
   }
@@ -47,19 +52,6 @@ class ExerciseRepositoryImpl implements ExerciseRepository {
     try {
       final response = await dio.get<List<dynamic>>(
         '?name=$name',
-      );
-
-      return _manageResponse(response);
-    } on Exception catch (e) {
-      throw Exception(e.toString());
-    }
-  }
-
-  @override
-  Future<List<Exercise>> loadByType({required ExerciseType type}) async {
-    try {
-      final response = await dio.get<List<dynamic>>(
-        '?type=${type.value}',
       );
 
       return _manageResponse(response);

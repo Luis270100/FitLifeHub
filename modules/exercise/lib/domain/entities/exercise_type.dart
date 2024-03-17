@@ -1,4 +1,5 @@
 enum ExerciseType {
+  none(''),
   cardio('cardio'),
   olympicWeightlifting('olympic_weightlifting'),
   plyometrics('plyometrics'),

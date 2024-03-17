@@ -1,4 +1,5 @@
 enum Difficulty {
+  none('none'),
   beginner('beginner'),
   intermediate('intermediate'),
   expert('expert');
