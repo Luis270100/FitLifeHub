@@ -16,9 +16,27 @@ class ShellWrapper extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Exercises'),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Recipes'),
-          BottomNavigationBarItem(icon: Icon(Icons.tab), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 4),
+              child: Icon(Icons.fitness_center),
+            ),
+            label: 'Exercises',
+          ),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 4),
+              child: Icon(Icons.kitchen),
+            ),
+            label: 'Recipes',
+          ),
+          BottomNavigationBarItem(
+            icon: Padding(
+              padding: EdgeInsets.only(bottom: 4),
+              child: Icon(Icons.account_circle),
+            ),
+            label: 'Profile',
+          ),
         ],
         currentIndex: navigationShell.currentIndex,
         onTap: (int index) => _onTap(context, index),
