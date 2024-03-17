@@ -11,40 +11,22 @@ extension BuildContextEntension<T> on BuildContext {
   Orientation get orientation => MediaQuery.of(this).orientation;
 
   // Text Theme
-  // Display
-  TextStyle? get displayLarge => Theme.of(this).textTheme.displayLarge;
-
-  TextStyle? get displayMedium => Theme.of(this).textTheme.displayMedium;
-
-  TextStyle? get displaySmall => Theme.of(this).textTheme.displaySmall;
-
-  // Headline
-  TextStyle? get headlineLarge => Theme.of(this).textTheme.headlineLarge;
-
-  TextStyle? get headlineMedium => Theme.of(this).textTheme.headlineMedium;
-
-  TextStyle? get headlineSmall => Theme.of(this).textTheme.headlineSmall;
-
-  //Title
-  TextStyle? get titleLarge => Theme.of(this).textTheme.titleLarge;
-
-  TextStyle? get titleMedium => Theme.of(this).textTheme.titleMedium;
-
-  TextStyle? get titleSmall => Theme.of(this).textTheme.titleSmall;
-
-  // Label
-  TextStyle? get labelLarge => Theme.of(this).textTheme.labelLarge;
-
-  TextStyle? get labelMedium => Theme.of(this).textTheme.labelMedium;
-
-  TextStyle? get labelSmall => Theme.of(this).textTheme.labelSmall;
-
   // Body
   TextStyle? get bodyLarge => Theme.of(this).textTheme.bodyLarge;
 
   TextStyle? get bodyMedium => Theme.of(this).textTheme.bodyMedium;
 
   TextStyle? get bodySmall => Theme.of(this).textTheme.bodySmall;
+
+  //Title
+  TextStyle? get titleLarge => Theme.of(this).textTheme.titleLarge;
+
+  TextStyle? get titleMedium => Theme.of(this).textTheme.titleMedium;
+
+  // Headline
+  TextStyle? get headlineLarge => Theme.of(this).textTheme.headlineLarge;
+
+  TextStyle? get headlineMedium => Theme.of(this).textTheme.headlineMedium;
 
   //  Colors
   Color get primary => Theme.of(this).colorScheme.primary;

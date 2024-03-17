@@ -1,4 +1,5 @@
 import 'package:common/presentation/views/home/home_view.dart';
+import 'package:exercise/domain/entities/exercise.dart';
 import 'package:exercise/exercise.dart';
 import 'package:fit_life_hub/router/shell_wrapper.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,17 @@ final router = GoRouter(
               name: ExercisesView.route,
               path: ExercisesView.route,
               builder: (context, state) => const ExercisesView(),
+            ),
+            GoRoute(
+              name: ExerciseView.route,
+              path: ExerciseView.route,
+              builder: (context, state) {
+                final exercise = state.extra as Exercise? ?? const Exercise();
+
+                return ExerciseView(
+                  exercise: exercise,
+                );
+              },
             ),
           ],
         ),

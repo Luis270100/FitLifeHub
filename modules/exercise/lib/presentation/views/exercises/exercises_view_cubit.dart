@@ -12,5 +12,23 @@ class ExercisesViewCubit extends Cubit<ExercisesViewState> {
 
   final ExerciseRepository _exerciseRepository;
 
-  Future<void> load() async {}
+  Future<void> load() async {
+    try {
+      emit(state.copyWith(isLoading: true));
+      final exercises = await _exerciseRepository.loadExercisesByFilters();
+
+      emit(state.copyWith(isLoading: false, exercises: exercises));
+    } catch (e) {
+      emit(
+        state.copyWith(
+          isLoading: false,
+          showSnackbar: true,
+          snackbarMessage: e.toString(),
+        ),
+      );
+    }
+  }
+
+  void toggleSnackbar() =>
+      emit(state.copyWith(showSnackbar: !state.showSnackbar));
 }

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextTheme textThemes() => TextTheme(
+      bodySmall: GoogleFonts.montserrat(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      ),
       bodyMedium: GoogleFonts.montserrat(
         fontSize: 14,
         fontWeight: FontWeight.w500,

@@ -13,6 +13,19 @@ class ExercisesViewState extends Equatable {
   final bool showSnackbar;
   final String snackbarMessage;
 
+  ExercisesViewState copyWith({
+    bool? isLoading,
+    List<Exercise>? exercises,
+    bool? showSnackbar,
+    String? snackbarMessage,
+  }) =>
+      ExercisesViewState(
+        isLoading: isLoading ?? this.isLoading,
+        exercises: exercises ?? this.exercises,
+        showSnackbar: showSnackbar ?? this.showSnackbar,
+        snackbarMessage: snackbarMessage ?? this.snackbarMessage,
+      );
+
   @override
   List<Object> get props => [
         isLoading,
