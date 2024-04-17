@@ -7,7 +7,7 @@ import 'package:recipe/di/recipe_di.dart';
 final getIt = GetIt.instance;
 
 Future<void> initDi() async {
-  await commonDi(getIt);
+  await CommonDi.init(getIt);
   await ExerciseDi.init(getIt);
   await profileDi(getIt);
   await RecipeDi.init(getIt);

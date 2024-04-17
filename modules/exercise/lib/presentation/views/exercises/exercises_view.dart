@@ -1,11 +1,9 @@
 import 'package:common/extensions/build_context_extension.dart';
 import 'package:common/presentation/widgets/snackbar.dart';
 import 'package:exercise/di/exercise_di.dart';
-import 'package:exercise/presentation/views/exercise/exercise_view.dart';
 import 'package:exercise/presentation/views/exercises/exercises_view_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class ExercisesView extends StatelessWidget {
   const ExercisesView({
@@ -45,10 +43,7 @@ class ExercisesView extends StatelessWidget {
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: GestureDetector(
-                    onTap: () => context.push(
-                      ExerciseView.route,
-                      extra: state.exercises[index],
-                    ),
+                    onTap: () {},
                     child: Card(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
