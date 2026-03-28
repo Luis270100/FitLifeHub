@@ -1,4 +1,5 @@
-import 'package:common/presentation/views/home/home_view.dart';
+import 'package:auth/presentation/login/login_view.dart';
+import 'package:auth/presentation/sing_in/sing_in_view.dart';
 import 'package:exercise/domain/entities/exercise.dart';
 import 'package:exercise/exercise.dart';
 import 'package:fit_life_hub/router/shell_wrapper.dart';
@@ -12,12 +13,18 @@ final GlobalKey<NavigatorState> _sectionNavigationKey =
     GlobalKey<NavigatorState>();
 
 final router = GoRouter(
-  initialLocation: '/exercises',
+  initialLocation: LoginView.route,
   navigatorKey: _rootNavigatorKey,
   routes: [
     GoRoute(
-      path: '/home',
-      builder: (context, state) => const HomeView(),
+      path: LoginView.route,
+      name: LoginView.route,
+      builder: (context, state) => const LoginView(),
+    ),
+    GoRoute(
+      path: SingInView.route,
+      name: SingInView.route,
+      builder: (context, state) => const SingInView(),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) => ShellWrapper(

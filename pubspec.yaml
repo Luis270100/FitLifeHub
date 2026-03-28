@@ -21,6 +21,8 @@ dependencies:
   #Modules
   common:
     path: modules/common
+  auth:
+    path: modules/auth
   exercise:
     path: modules/exercise
   profile:

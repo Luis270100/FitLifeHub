@@ -1,27 +1,25 @@
-name: profile
-description: FitLifeHub Package
+name: auth
+description: "Auth Module"
 version: 0.0.1
 publish_to: none
 
-
 environment:
-  sdk: '>=3.1.5 <4.0.0'
+  sdk: '>=3.3.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.5
+  firebase_auth: ^4.19.2
   get_it: ^7.7.0
-  
-  #Modules
-  common:
-    path: ../common
+  go_router: ^13.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
-  very_good_analysis: ^5.1.0
+  flutter_lints: ^3.0.0
 
 
 flutter:

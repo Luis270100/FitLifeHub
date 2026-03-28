@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.1.0
-  get_it: ^7.6.4
+  get_it: ^7.7.0
   firebase_analytics: ^10.9.0
 
 dev_dependencies:

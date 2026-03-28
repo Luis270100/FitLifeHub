@@ -1,3 +1,4 @@
+import 'package:auth/di/auth_dit.dart';
 import 'package:common/di/common_di.dart';
 import 'package:exercise/di/exercise_di.dart';
 import 'package:get_it/get_it.dart';
@@ -8,6 +9,7 @@ final getIt = GetIt.instance;
 
 Future<void> initDi() async {
   await CommonDi.init(getIt);
+  await AuthDi.init(getIt);
   await ExerciseDi.init(getIt);
   await profileDi(getIt);
   await RecipeDi.init(getIt);
